@@ -5,7 +5,7 @@
 
 try{
 
-    $pdo = new PDO('mysql:host=localhost;dbname=quick_food','root','');
+    $pdo = new PDO('mysql:host=localhost;dbname=quick_food','root','root');
     $statements = $pdo->prepare('select * from foods');
     $statements->execute();
     $foods = $statements->fetchAll();

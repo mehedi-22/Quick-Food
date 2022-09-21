@@ -14,8 +14,6 @@ try{
 
 ?>
 
-
-
 <?php  require('nav.php')    ?>
 
 
@@ -50,8 +48,8 @@ try{
           <button class="p-2 mb-2 w-full border border-gray-500 rounded-lg">
             <a href="../src/productDetails.php">Details</a>
           </button>
-          <button
-            class="text-white w-full p-2 text-whitemt-10 bg-red-600 rounded-full"
+          <button data-id="<?php echo $food['foodID']  ?>"
+            class="cartButton text-white w-full p-2 text-whitemt-10 bg-red-600 rounded-full"
           >
             Add to cart
           </button>
