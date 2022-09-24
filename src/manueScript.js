@@ -2,6 +2,7 @@ searchFood = () => {
   searchValue = document.getElementById("searchId").value.toUpperCase();
   container = document.getElementById("imgContainerId");
   cardArray = Array.from(container.getElementsByClassName("imgClass"));
+  
   cardArray.map((key) => {
     foodName = key
       .getElementsByClassName("foodNameClass")[0]

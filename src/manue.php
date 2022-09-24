@@ -17,7 +17,9 @@ try{
 <?php  require('nav.php')    ?>
 
 
-    <main class="bg-gray-50 w-screen h-screen p-16">
+    <main class="bg-gray-50 w-screen h-screen p-16 relative">
+      <div id="msg" class="text-lg absolute"></div>     
+      
       <div class="flex justify-center">
         <input id="searchId"
           type="text"
