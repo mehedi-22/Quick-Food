@@ -17,7 +17,7 @@ session_start();
   try{
     $phone = $_SESSION['phone'];
     if($phone){
-      header("location:../index.php");
+      header("location:./index.php");
       
     }
 

@@ -5,7 +5,7 @@
     public function __construct(){
          $dbhost ='localhost';
          $dbuser = 'root';
-         $dbpass = '';
+         $dbpass = 'root';
          $dbname = 'quick_food';
  
       

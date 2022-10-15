@@ -15,7 +15,7 @@ if (isset($_GET['status'])){
  }
 
  if (isset($_POST['update_product'])){
- $message = $ufoodobj->food_info_update($_POST);
+  $message = $ufoodobj->food_info_update($_POST);
 
  }
 

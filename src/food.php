@@ -1,24 +1,11 @@
 <?php error_reporting(0); ?>
 
 <?php
-     
+ include_once './queryBuilder.php';
+ require_once './Connection.php';
 
-try{
-
-    $pdo = new PDO('mysql:host=localhost;dbname=quick_food','root','root');
-    $statements = $pdo->prepare('select * from foods');
-    $statements->execute();
-    $foods = $statements->fetchAll();
-       
-    
-   
-}catch(Exception $e){
-    echo $e;
-    die('Could not connected');
-
-}
-   
-require '../src/manue.php';
-
+ $query =  new QueryBuilder(Connection::make());
+ $foods = $query->fetchAll('foods');
+ require '../src/manue.php';
 
 ?>

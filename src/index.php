@@ -57,10 +57,10 @@ try{
     <li><a class="main-nav-link" href="./checkout.php">Cart</a></li>
   <?php
     if($phone==null){
-    echo '    <li><a class="main-nav-link nav-cta" href="src/sigup.php">SIGN IN</a></li>';
+    echo '    <li><a class="main-nav-link nav-cta" href="sigup.php">SIGN IN</a></li>';
   }  
   else{
-    echo '    <li><a class="main-nav-link nav-cta" href="src/sigup.php">SIGN Out</a></li>';
+    echo '    <li><a class="main-nav-link nav-cta" href="sigup.php">SIGN Out</a></li>';
    
 
   }
@@ -92,49 +92,42 @@ try{
         <img style="height: 449px" src="../images/bgimg.png" />
       </div>
 
-      <div class=" ">
-        <div class="flex justify-around  py-12">
-          <div class="">
-              <input type="text" placeholder="search" class="p-3 rounded-full  text-center " />  
-          
-          </div>
-          <div class="flex gap-4">
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pasta</button>
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pitza</button>
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">Burger</button>
-          </div>
-        </div>
+
+<!-- make  -->
         <div class="  flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
             
-           <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-                  <img class="" src="../images/p.png" alt="">
+           <div class="w-60    border border-gray-200">
+                  <img class="" src="../images/reviewImg/reviewImage-01.png" alt="">
                   <div class="p-3 ">
-                    <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-                    <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+                    <strong class=" text-xl pb-6 ">
+                      We offer Best Food in town
+                    </strong>
+                    
                   </div>
                    
-                   <button class=" text-white  w-full p-2 text-whitemt-10 bg-red-600  rounded-full ">Add to cart</button>
            </div>
            
-           <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-            <img class="" src="../images/p.png" alt="">
+           <div class="w-60   border border-gray-200">
+            <img class="" src="../images/reviewImg/reviewImage-02.png" alt="">
             <div class="p-3">
-              <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-              <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+              <strong class=" text-xl pb-6 ">
+                With us you got fast delivery
+              </strong>
+              
             </div>
              
-             <button class=" w-full p-2 text-white  bg-red-600  rounded-full ">Add to cart</button>
      </div>
 
 
-     <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-      <img class="" src="../images/p.png" alt="">
+     <div class="w-60     border border-gray-200">
+      <img class="" src="../images/reviewImg/reviewImage-03.png" alt="">
       <div class="p-3">
-        <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-        <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+        <strong class=" text-xl pb-6 ">
+          Satisfy our Customer is our first priority
+      </strong>
+        
       </div>
        
-       <button class=" w-full p-2 text-white  bg-red-600  rounded-full ">Add to cart</button>
 </div>
 
 
@@ -249,3 +242,16 @@ try{
     </footer>
   </body>
 </html>
+<!-- 
+      <div class=" ">
+        <div class="flex justify-around  py-12">
+          <div class="">
+              <input type="text" placeholder="search" class="p-3 rounded-full  text-center " />  
+          
+          </div>
+          <div class="flex gap-4">
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pasta</button>
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pitza</button>
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">Burger</button>
+          </div>
+        </div> -->

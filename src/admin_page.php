@@ -1,3 +1,9 @@
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
 <?php error_reporting(0); ?>
 <?php 
 include("function.php");
@@ -125,7 +131,7 @@ if (isset($_GET['status'])){
             <td><?php echo $food['price'] ?></td>
             <td><?php echo $food['quantity'] ?></td>
             <td>
-              <img src="./upload/<?php echo $food['image'] ?>" height="100" alt="" />
+              <!-- <img src="./upload/<?php echo $food['image'] ?>" height="100" alt="" /> -->
             </td>
             <td>
               <a href="admin_update.php? status=edit&&id=<?php echo $food['foodID'] ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>

@@ -1,16 +1,17 @@
 <?php error_reporting(0); ?>
-
-
 <?php 
 
 session_start();
-$phone = null;
+
 try{
-  $phone = $_SESSION['phone'];
+  if (isset($_SESSION['phone']))
+      echo $_SESSION['phone'] ;
 
 }catch(Exception $e){
-
+   
 }
+$totalPrice = 0;
+ require './makeOrder.php'
 
 ?>
 
@@ -20,11 +21,11 @@ try{
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&family=Poppins:wght@900&display=swap" rel="stylesheet">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/6d5ca9b667.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="../dist/css/mehedi/checkout.css">
- 
+    <script defer src="../script/addListener.js"></script>
   
     <title>Checkout </title>
 </head>
@@ -54,8 +55,12 @@ try{
         </ul>
       </nav>
     </header>
+
     <div class="table">
-        <a class='empty' href="">Clear Cart</a>
+        <!-- <a class='empty' href="">Clear Cart</a> -->
+        <!--                                           temp -->
+        <?php include './queryBuilder.php' ?>
+       
         <table style="border-bottom: 1px #e3e3e3 solid; margin-bottom:20px;">
             <tr>
                 <th>Image</th>
@@ -63,53 +68,36 @@ try{
                 <th>Quantity</th>
                 <th>Price</th>
                 <th>Remove</th>
-            </tr>
-
+            </tr>   
+                     
+                    <?php foreach($foodsIncart as $food): ?>
      
-                    <tr>
+                    <tr  class="order ">
                         <td><img src="../images/food-2.png"></td>
-                        <td>Pizza </td>
-                        <td>1kg</td>
-                        <td>120/-</td>
-                        <td><a href=""><i class="fas fa-times"></i></a></td>
+                        <td> <?php  echo $food['name']  ?></td>
+                        <td >
+                          <span food-id="<?php echo $food['productId'] ?>"  class="gQuantity"><?php  echo $food['quantity']  ?></span>
+                          <button class="increment">+</button>
+                          <button class="decrement">-</button>
+                        </td>
+                        
+                        <td class="price"><?php  echo $food['price']  ?> tk</td>
+                        <td><button data-id="<?php  echo $food['productId']  ?>" class="gBtn"><i class="fas fa-times"></i> remove</button></td>
                     </tr>
-                    <tr>
-                        <td><img src="../images/food-1.png"></td>
-                        <td>Pizza </td>
-                        <td>1kg</td>
-                        <td>120/-</td>
-                        <td><a href=""><i class="fas fa-times"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/food-3.png"></td>
-                        <td>Pizza </td>
-                        <td>1kg</td>
-                        <td>120/-</td>
-                        <td><a href=""><i class="fas fa-times"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/food-4.png"></td>
-                        <td>Pizza </td>
-                        <td>1kg</td>
-                        <td>120/-</td>
-                        <td><a href=""><i class="fas fa-times"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/food-1.png"></td>
-                        <td>Pizza </td>
-                        <td>1kg</td>
-                        <td>120/-</td>
-                        <td><a href=""><i class="fas fa-times"></i></a></td>
-                    </tr>
-            
+                    <?php  $totalPrice = $totalPrice + $food['price']  ?>
+                    <?php endforeach ?>
+                   
         </table>
         
         <div class="total" style="float: right;">
-            <h2>Total Tk: 10000/-</span></h2>
-           
-            <button class = "button" type="submit" name="order">
-                <a href="placeOrder.php">Place Order</a>
-            </button>
+            <h3>Total Tk <?php echo $totalPrice ?> tk/-</span></h3>
+                    </br>
+             <button class = "button">
+               Place Order
+             </button>
+            <!-- <button class = "button" type="submit" name="order">
+               
+            </button> -->
         </div>
     </div>
     
