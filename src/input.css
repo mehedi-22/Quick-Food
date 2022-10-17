@@ -16,3 +16,7 @@
   box-shadow: -10px 20px 40px -1px rgba(0, 0, 0, 0.2);
   border-radius: 180px 180px 30px 30px;
 }
+
+.comntClass{
+  background: red;
+}

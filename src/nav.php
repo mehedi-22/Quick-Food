@@ -1,4 +1,4 @@
-
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +15,7 @@
 
 
     <script defer type="text/javascript" src="./manueScript.js"></script>
+    <script defer type="text/javascript" src="../script/addToCart.js"></script>
 
   </head>
   <body>
@@ -31,7 +32,10 @@
   <ul class="main-nav-list">
     <li><a class="main-nav-link" href="./index.php">Home</a></li>
     <li><a class="main-nav-link" href="./food.php">Menu</a></li>
-    <li><a class="main-nav-link" href="./checkout.php">Cart</a></li>
+    <li><a class="main-nav-link" href="./customerRivew.php">Review</a></li>
+    <li><a class=" main-nav-link" href="./checkout.php">Cart
+      <span  id="grabCart"></span>
+    </a></li>
     <?php
     if($phone==null){
       echo '<li><a class="main-nav-link nav-cta" href="../src/sigup.php">SIGN IN</a></li>';

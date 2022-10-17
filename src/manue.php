@@ -14,12 +14,12 @@ try{
 
 ?>
 
-
-
 <?php  require('nav.php')    ?>
 
 
-    <main class="bg-gray-50 w-screen h-screen p-16">
+    <main class="bg-gray-50 w-screen h-screen p-16 relative">
+      <div id="msg" class="text-lg absolute"></div>     
+      
       <div class="flex justify-center">
         <input id="searchId"
           type="text"
@@ -33,25 +33,32 @@ try{
 
       <div id="imgContainerId" class="grid grid-cols-4  mt-14 px-60">
         <?php foreach($foods as $food): ?>
-        <div  class=" imgClass w-52 p-2 rounded-lg border border-gray-500">
+        <div  class="gmnu imgClass w-52 p-2 rounded-lg border border-gray-500">
 
           <img src="data:image/jpg;charset=utf8;base64,
           <?php echo base64_encode($food['image']); ?>" >        
-               
+           <!--  <img src="./upload/<?php echo $food['image'] ?>" height="100" alt="" /> -->
           <img class="w-auto" src="" alt="" />
           <div class="p-3">
-            <strong class="foodNameClass font-bold text-sm pb-6"> 
-             <?php  echo $food['foodName']  ?>
-            </strong>
-            <div class="text-sm">
-            <?php  echo $food['details']  ?>
+            <div class=" flex justify-between ">
+              <div class=" data-name foodNameClass font-bold text-sm pb-6"> 
+                  <?php  echo $food['foodName']  ?>
+              </div>
+              <div class="data-price"> 
+                  <?php  echo $food['price']  ?> tk
+              </div>
+            </div>
+
+            <div class = "data-details text-sm">
+                <?php  echo $food['details'] ?? " "  ?>
             </div>
           </div>
           <button class="p-2 mb-2 w-full border border-gray-500 rounded-lg">
             <a href="../src/productDetails.php">Details</a>
           </button>
-          <button
-            class="text-white w-full p-2 text-whitemt-10 bg-red-600 rounded-full"
+          <button data-id="<?php echo $food['foodID']?>"
+                  user-id="<?php echo $_SESSION['emailID'] ?? "mon" ?>" "
+            class="cartButton text-white w-full p-2 text-whitemt-10 bg-red-600 rounded-full"
           >
             Add to cart
           </button>

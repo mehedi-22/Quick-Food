@@ -1,12 +1,13 @@
-<?php error_reporting(0); ?>
+
 
 <?php 
-
 session_start();
-$phone = null;
-try{
-  $phone = $_SESSION['phone'];
+require_once "./hndlComment.php";
 
+
+try{
+  echo $phone = $_SESSION['phone'] ;
+         
 }catch(Exception $e){
 
 }
@@ -23,15 +24,15 @@ try{
 
     <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
+    <!-- <link
     href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
     rel="stylesheet"
-  />
+  /> -->
   <link rel="stylesheet" href="../dist/css/general.css" />
   <link rel="stylesheet" href="../dist/css/style.css" />
-  <link rel="stylesheet" href="../dist/output.css"/>
-  
+  <link rel="stylesheet" href="../dist/output.css" >
+   
   <script
   type="module"
   src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -47,7 +48,7 @@ try{
   
   <header class="header">
 <ul class="main-nav-list">
-  <li><a class="main-nav-link text-sm" href="#">Quick Food</a></li>
+  <li><a class="main-nav-link text-sm" href="#">Quick Food<?php echo $phone ?> </a></li>
 </ul>
 
 <nav>
@@ -57,10 +58,10 @@ try{
     <li><a class="main-nav-link" href="./checkout.php">Cart</a></li>
   <?php
     if($phone==null){
-    echo '    <li><a class="main-nav-link nav-cta" href="src/sigup.php">SIGN IN</a></li>';
+    echo '    <li><a class="main-nav-link nav-cta" href="sigup.php">SIGN IN</a></li>';
   }  
   else{
-    echo '    <li><a class="main-nav-link nav-cta" href="src/sigup.php">SIGN Out</a></li>';
+    echo '    <li><a class="main-nav-link nav-cta" href="sigup.php">SIGN Out</a></li>';
    
 
   }
@@ -92,53 +93,49 @@ try{
         <img style="height: 449px" src="../images/bgimg.png" />
       </div>
 
-      <div class=" ">
-        <div class="flex justify-around  py-12">
-          <div class="">
-              <input type="text" placeholder="search" class="p-3 rounded-full  text-center " />  
-          
-          </div>
-          <div class="flex gap-4">
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pasta</button>
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pitza</button>
-            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">Burger</button>
-          </div>
-        </div>
-        <div class="  flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
-            
-           <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-                  <img class="" src="../images/p.png" alt="">
+
+<!-- make  -->
+<div class=" py-32 bg-gray-50 overflow-hidden p-10 flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
+  
+
+           <div class="w-60 shadow-md bg-white rounded-md  border border-gray-200">
+                  <img class="" src="../images/reviewImg/reviewImage-01.png" alt="">
                   <div class="p-3 ">
-                    <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-                    <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+                    <strong class=" text-xl pb-6 ">
+                      We offer Best Food in town
+                    </strong>
+                    
                   </div>
                    
-                   <button class=" text-white  w-full p-2 text-whitemt-10 bg-red-600  rounded-full ">Add to cart</button>
            </div>
            
-           <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-            <img class="" src="../images/p.png" alt="">
+           <div class="w-60 shadow-md bg-white rounded-md  border border-gray-200">
+            <img class="" src="../images/reviewImg/reviewImage-02.png" alt="">
             <div class="p-3">
-              <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-              <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+              <strong class=" text-xl pb-6 ">
+                With us you got fast delivery
+              </strong>
+              
             </div>
              
-             <button class=" w-full p-2 text-white  bg-red-600  rounded-full ">Add to cart</button>
      </div>
 
 
-     <div class="w-60  p-5 rounded-t-full  border border-gray-500">
-      <img class="" src="../images/p.png" alt="">
-      <div class="p-3">
-        <strong class=" text-xl pb-6 ">Margherita Pizza</strong>
-        <div class=" text-sm ">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</div>
+     <div class="w-60  shadow-md bg-white rounded-md   border border-gray-200">
+      <img class="" src="../images/reviewImg/reviewImage-03.png" alt="">
+      <div class="p-3 ">
+        <strong class=" text-xl pb-6 ">
+          Satisfy our Customer is our first priority
+      </strong>
+      
+        
       </div>
        
-       <button class=" w-full p-2 text-white  bg-red-600  rounded-full ">Add to cart</button>
 </div>
 
 
-        </div>
+</div>
+
       
     </div>
 
@@ -149,39 +146,20 @@ try{
         <div class="borderr"></div>
         <div class="row">
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-2.jpg" alt="Customer" />
-              <div class="name">Shafi</div>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class=""><?php echo getComment(1) ?></div>
 
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
             </div>
           </div>
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-2.jpg" alt="Customer" />
-              <div class="name">Sofia</div>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class="  "><?php echo getComment(2) ?></div>
 
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
             </div>
           </div>
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-1 (2).jpg" alt="Customer" />
-              <div class="name">Abdul Khalek</div>
-
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class=""><?php echo getComment(3) ?></div>
             </div>
           </div>
         </div>
@@ -249,3 +227,16 @@ try{
     </footer>
   </body>
 </html>
+<!-- 
+      <div class=" ">
+        <div class="flex justify-around  py-12">
+          <div class="">
+              <input type="text" placeholder="search" class="p-3 rounded-full  text-center " />  
+          
+          </div>
+          <div class="flex gap-4">
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pasta</button>
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">pitza</button>
+            <button class="  hover:bg-red-500 hover:text-white px-3  border rounded-full text-black">Burger</button>
+          </div>
+        </div> -->
