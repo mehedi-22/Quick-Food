@@ -60,7 +60,7 @@
 /* HERO SECTION */
 /**************************/
 .testimonials {
-  padding: 70px 0;
+  padding: 160px 0px;
   background: #f1f1f1;
   color: #434343;
   text-align: center;
@@ -122,7 +122,6 @@
 .footer {
   padding: 43px 0;
   border-top: 1px solid #eee;
-  
 }
 
 .grid--footer {
@@ -142,7 +141,7 @@
 .social-links {
   list-style: none;
   display: flex;
-  gap: 2.0rem;
+  gap: 2rem;
 }
 
 .social-icon {
@@ -151,14 +150,12 @@
 }
 
 .copyright {
- 
   line-height: 1.6;
   color: #767676;
   margin-top: auto;
 }
 
 .footer-heading {
-  
   font-weight: 900;
   margin-bottom: 4rem;
 }

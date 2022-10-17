@@ -142,18 +142,18 @@ public function food_info_update($data){
         $row = mysqli_fetch_array($customerdata);
       
         if(is_array($row)){
-          header("location:../index.php");
           //$customer = mysqli_fetch_assoc($customerdata);
            session_start();
            
           $_SESSION['name'] =  $row['fullName'];
-          $_SESSION['email'] =  $row['EmailID'];
-           $_SESSION['phone'] =  $row['phoneNumber'];
+          $_SESSION['email'] =  $row['emailID'];
+          $_SESSION['phone'] =  $row['phoneNumber'];
+           header("location:../index.php");
         
 
         }
         else{
-         // echo "invalid ";
+          echo "invalid ";
          
         }
        

@@ -1,10 +1,11 @@
 <?php error_reporting(0); ?>
 
 <?php
- include_once './queryBuilder.php';
- require_once './Connection.php';
 
- $query =  new QueryBuilder(Connection::make());
+ require_once "../Database/Connection.php";
+ require_once "./testQuery.php";
+
+ $query =  new TestQuery(Connection::make());
  $foods = $query->fetchAll('foods');
  require '../src/manue.php';
 

@@ -2,7 +2,7 @@
   require_once "./hndlImage.php";
   require_once "./testQuery.php";
   require_once "./hndlComment.php";
-
+  require_once "../Database/Connection.php";
   
 
   if(isset($_POST['submit'])){

@@ -1,13 +1,13 @@
-<?php error_reporting(0); ?>
+
 
 <?php 
+session_start();
 require_once "./hndlComment.php";
 
-session_start();
-$phone = null;
-try{
-  $phone = $_SESSION['phone'];
 
+try{
+  echo $phone = $_SESSION['phone'] ;
+         
 }catch(Exception $e){
 
 }
@@ -24,11 +24,11 @@ try{
 
     <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
+    <!-- <link
     href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
     rel="stylesheet"
-  />
+  /> -->
   <link rel="stylesheet" href="../dist/css/general.css" />
   <link rel="stylesheet" href="../dist/css/style.css" />
   <link rel="stylesheet" href="../dist/output.css" >
@@ -48,7 +48,7 @@ try{
   
   <header class="header">
 <ul class="main-nav-list">
-  <li><a class="main-nav-link text-sm" href="#">Quick Food</a></li>
+  <li><a class="main-nav-link text-sm" href="#">Quick Food<?php echo $phone ?> </a></li>
 </ul>
 
 <nav>
@@ -95,7 +95,7 @@ try{
 
 
 <!-- make  -->
-<div class=" bg-gray-200 overflow-hidden p-10 flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
+<div class=" py-32 bg-gray-50 overflow-hidden p-10 flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
   
 
            <div class="w-60 shadow-md bg-white rounded-md  border border-gray-200">

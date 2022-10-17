@@ -32,6 +32,7 @@
   <ul class="main-nav-list">
     <li><a class="main-nav-link" href="./index.php">Home</a></li>
     <li><a class="main-nav-link" href="./food.php">Menu</a></li>
+    <li><a class="main-nav-link" href="./customerRivew.php">Review</a></li>
     <li><a class=" main-nav-link" href="./checkout.php">Cart
       <span  id="grabCart"></span>
     </a></li>

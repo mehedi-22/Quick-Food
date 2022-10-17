@@ -59,8 +59,7 @@ $totalPrice = 0;
     <div class="table">
         <!-- <a class='empty' href="">Clear Cart</a> -->
         <!--                                           temp -->
-        <?php include './queryBuilder.php' ?>
-       
+         <?php include './queryBuilder.php' ?>        
         <table style="border-bottom: 1px #e3e3e3 solid; margin-bottom:20px;">
             <tr>
                 <th>Image</th>
