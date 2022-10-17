@@ -60,7 +60,7 @@
 /* HERO SECTION */
 /**************************/
 .testimonials {
-  padding: 40px 0;
+  padding: 70px 0;
   background: #f1f1f1;
   color: #434343;
   text-align: center;
@@ -89,8 +89,12 @@
   padding: 15px;
 }
 .testimonil {
-  background: #fff;
-  padding: 30px;
+  height: 238px;
+  background: white;
+  color: darkslategray;
+  font-size: larger;
+  font-weight: bold;
+  padding: 10px;
 }
 .testimonil img {
   width: 50%;

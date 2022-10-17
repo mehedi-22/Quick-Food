@@ -41,7 +41,11 @@ class TestQuery{
          $statements = $this->pdoExecutes($query,[$field]);
    
     }
- 
+    function insertReview($table , array $fields){
+        $query =  "insert into $table values(?, ?, ?, ?, ?)";
+        $statements = $this->pdoExecutes($query,$fields);
+  
+   }
 }
 
    

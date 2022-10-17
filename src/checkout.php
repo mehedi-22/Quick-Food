@@ -90,7 +90,7 @@ $totalPrice = 0;
         </table>
         
         <div class="total" style="float: right;">
-            <h3>Total Tk <?php echo $totalPrice ?> tk/-</span></h3>
+            <span class="g-total">Total Tk <?php echo $totalPrice ?> </span>tk/-
                     </br>
              <button class = "button">
                Place Order

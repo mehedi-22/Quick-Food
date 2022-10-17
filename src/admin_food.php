@@ -1,15 +1,32 @@
 <?php 
   require_once "./hndlImage.php";
   require_once "./testQuery.php";
+  require_once "./hndlComment.php";
+
+  
 
   if(isset($_POST['submit'])){
     $firsKey = array_key_first($_FILES);
     $imageName = $firsKey;
-    //var_dump($_FILES);
     $uploadedImgName = uploadImage($imageName);
     $query = new TestQuery(Connection::make());
     $query->insert("reviewfoods",$uploadedImgName);
   }
+
+  if(isset($_POST['submitComment'])){
+      $commentPath = "../file/";
+  
+      if(isset($_POST['comment-1'])){
+            file_put_contents($commentPath . "comment-1.txt",$_POST['comment-1']) ;        
+        }else if(isset($_POST['comment-2'])){
+            file_put_contents($commentPath . "comment-2.txt",$_POST['comment-2']) ;        
+        }else if(isset($_POST['comment-3'])){
+            file_put_contents($commentPath . "comment-3.txt",$_POST['comment-3']) ;        
+        }
+      
+  }
+  
+
 
 ?>
 
@@ -24,7 +41,7 @@
 </head>
 <body class=" bg-gray-100 w-full">
 
-<h2 class=" font-serif text-3xl ">Select Rivew  Possster : </h2>
+<h2 class=" font-serif text-3xl ">Select Rivew  Poster : </h2>
 
 <div class="grid grid-cols-4 gap-10 mt-14  px-48">
     <div>
@@ -66,8 +83,50 @@
     </div>      
 </div>
 
+<!--                      review   sec                             -->
 
+<div class="grid grid-cols-4 gap-10 mt-14  px-48">
+    <div>
+            <form action="admin_food.php" method="post" enctype="multipart/form-data">
+                <textarea  
+                    placeholder="Enter text here..." 
+                    class="w-full h-28 text-start" 
+                    name="comment-1"    
+                > <?php echo getComment(1)?> 
+                </textarea>
+                <input class="  my-3 block rounded-md w-full text-white bg-green-400 py-2 border border-gray-400" type="submit" value="upload" name="submitComment">
 
+            </form>
+        
+    </div>
+
+    <div>
+            <form action="admin_food.php" method="post" enctype="multipart/form-data">
+                <textarea  
+                    placeholder="Enter text here..." 
+                    class="w-full h-28" 
+                    name="comment-2"
+                > <?php echo getComment(2)  ?>
+                </textarea>
+                <input class="  my-3 block rounded-md w-full text-white bg-green-400 py-2 border border-gray-400" type="submit" value="upload" name="submitComment">
+
+            </form>
+        
+    </div>
+    <div>
+            <form action="admin_food.php" method="post" enctype="multipart/form-data">
+                <textarea  
+                    placeholder="Enter text here..." 
+                    class="w-full h-28" 
+                    name="comment-3"
+                > <?php echo getComment(3)  ?>
+                </textarea>
+                <input class="  my-3 block rounded-md w-full text-white bg-green-400 py-2 border border-gray-400" type="submit" value="upload" name="submitComment">
+
+            </form>
+        
+    </div>      
+</div>
 
 </body>
 </html>

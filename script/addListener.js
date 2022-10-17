@@ -25,30 +25,60 @@ const callback = async (id) => {
   console.log(`http://localhost/Database/model/removeOrder.php?id=${id}`);
     window.location = window.location;
 };
-const hndlQuantity = () => {
-  alert(30);
-};
+
 addToCart("order", callback);
+
+let totalEachPrice = ""
+const totalPrice = document.querySelector('.g-total')
+let tempTotal = 0
+
+const updateTotalPrice= ()=>{
+  grabNode("order",(key)=>{
+    const price = key.querySelector('.price').innerHTML.trim().replace("tk",'')
+    tempTotal = tempTotal + parseInt(price)
+    totalPrice.innerHTML = tempTotal
+    
+  })
+  tempTotal = 0
+}
+
 
 grabNode("order", (key) => {
   const incremnt = key.querySelector(".increment");
   const decremnt = key.querySelector(".decrement");
   const quantity = key.querySelector(".gQuantity");
+  const price = key.querySelector('.price');
+  const initPrice = price.innerHTML.trim().replace("tk",''); 
+  const upDatePrice =()=>{
+    price.innerHTML = parseInt(quantity.innerHTML) * parseInt(initPrice) + "tk"; //+ update
+    
+     
+  }
+ upDatePrice()
 
   incremnt.addEventListener("click", () => {
     const foodID = quantity.getAttribute("food-id");
     quantity.innerHTML = parseInt(quantity.innerHTML) + 1;
+    console.log(initPrice)
+    upDatePrice()
+    updateTotalPrice()
     updateQuantity[`i-${foodID}`] = quantity.innerHTML;
   });
+
   decremnt.addEventListener("click", () => {
     const foodID = quantity.getAttribute("food-id");
 
     quantity.innerHTML = Math.max(1, parseInt(quantity.innerHTML) - 1);
+    upDatePrice()
+    updateTotalPrice()
     updateQuantity[`i-${foodID}`] = quantity.innerHTML;
   });
 
   
 });
+updateTotalPrice()
+
+
 
 const hndlSubmit=()=>{
     const submit = document.querySelector(".button");

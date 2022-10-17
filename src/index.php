@@ -1,6 +1,7 @@
 <?php error_reporting(0); ?>
 
 <?php 
+require_once "./hndlComment.php";
 
 session_start();
 $phone = null;
@@ -30,8 +31,8 @@ try{
   />
   <link rel="stylesheet" href="../dist/css/general.css" />
   <link rel="stylesheet" href="../dist/css/style.css" />
-  <link rel="stylesheet" href="../dist/output.css"/>
-  
+  <link rel="stylesheet" href="../dist/output.css" >
+   
   <script
   type="module"
   src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -94,9 +95,10 @@ try{
 
 
 <!-- make  -->
-        <div class="  flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
-            
-           <div class="w-60    border border-gray-200">
+<div class=" bg-gray-200 overflow-hidden p-10 flex gap-9 justify-center text-center mx-auto" style="margin-bottom:70px ;">
+  
+
+           <div class="w-60 shadow-md bg-white rounded-md  border border-gray-200">
                   <img class="" src="../images/reviewImg/reviewImage-01.png" alt="">
                   <div class="p-3 ">
                     <strong class=" text-xl pb-6 ">
@@ -107,7 +109,7 @@ try{
                    
            </div>
            
-           <div class="w-60   border border-gray-200">
+           <div class="w-60 shadow-md bg-white rounded-md  border border-gray-200">
             <img class="" src="../images/reviewImg/reviewImage-02.png" alt="">
             <div class="p-3">
               <strong class=" text-xl pb-6 ">
@@ -119,19 +121,21 @@ try{
      </div>
 
 
-     <div class="w-60     border border-gray-200">
+     <div class="w-60  shadow-md bg-white rounded-md   border border-gray-200">
       <img class="" src="../images/reviewImg/reviewImage-03.png" alt="">
-      <div class="p-3">
+      <div class="p-3 ">
         <strong class=" text-xl pb-6 ">
           Satisfy our Customer is our first priority
       </strong>
+      
         
       </div>
        
 </div>
 
 
-        </div>
+</div>
+
       
     </div>
 
@@ -142,39 +146,20 @@ try{
         <div class="borderr"></div>
         <div class="row">
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-2.jpg" alt="Customer" />
-              <div class="name">Shafi</div>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class=""><?php echo getComment(1) ?></div>
 
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
             </div>
           </div>
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-2.jpg" alt="Customer" />
-              <div class="name">Sofia</div>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class="  "><?php echo getComment(2) ?></div>
 
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
             </div>
           </div>
           <div class="col">
-            <div class="testimonil">
-              <img src="../images/customer-1 (2).jpg" alt="Customer" />
-              <div class="name">Abdul Khalek</div>
-
-              <p class="para">
-                I really love quick food for their fast delivery and maintain
-                the quality . Quick food is my fast choice for order food
-                becuase there food is so testy.
-              </p>
+            <div class="testimonil shadow-xl rounded-md pt-10">
+              <div class=""><?php echo getComment(3) ?></div>
             </div>
           </div>
         </div>
